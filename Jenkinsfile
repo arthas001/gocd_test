@@ -26,12 +26,16 @@ pipeline {
             steps {                
                 echo './deploy production'            
             }        
+        }
+        stage('End ..') {
+            steps {
+                pwd
+            }
         }    
     }
 
     post {        
         always {
-            pwd            
             echo 'One way or another, I have finished'            
             deleteDir() /* clean up our workspace */        
         }        
