@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Test') {
       parallel {
-        stage('Test') {
+        stage('单元测试') {
           steps {
             echo 'Testing'
           }
