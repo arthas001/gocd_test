@@ -26,12 +26,7 @@ pipeline {
             steps {                
                 echo './deploy production'            
             }        
-        }
-        stage('End ..') {
-            steps {
-                pwd
-            }
-        }    
+        }   
     }
 
     post {        
