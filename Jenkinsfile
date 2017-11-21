@@ -8,21 +8,21 @@ pipeline {
     }
     stage('Test') {
       parallel {
-        stage('单元测试') {
+        stage('Test1') {
           steps {
             echo 'Testing'
           }
         }
-        stage('性能测试') {
+        stage('Test2') {
           steps {
-            echo '测试通过'
+            echo 'success!'
           }
         }
-        stage('验收测试') {
-            steps {
-              echo "验收测试开始。。。"
-              input "是否通过？"
-            }
+        stage('Test3') {
+          steps {
+            echo 'success!'
+            input 'Is OK?'
+          }
         }
       }
     }
@@ -30,6 +30,7 @@ pipeline {
       steps {
         echo 'Deply - Staging'
         echo 'Deply - Staging'
+        sh 'docker build . -t thomas/test:latest'
       }
     }
     stage('Sanity check') {
