@@ -13,10 +13,16 @@ pipeline {
             echo 'Testing'
           }
         }
-        stage('test1') {
+        stage('性能测试') {
           steps {
-            echo 'success'
+            echo '测试通过'
           }
+        }
+        stage('验收测试') {
+            steps {
+              echo "验收测试开始。。。"
+              input "是否通过？"
+            }
         }
       }
     }
