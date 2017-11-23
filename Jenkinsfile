@@ -30,7 +30,7 @@ pipeline {
       steps {
         echo 'Deply - Staging'
         echo 'Deply - Staging'
-        sh 'docker build . -t thomas/test:latest'
+        sh 'echo "docker build . -t test:latest"'
       }
     }
     stage('Sanity check') {
