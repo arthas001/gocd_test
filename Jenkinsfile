@@ -41,6 +41,7 @@ pipeline {
     stage('Deploy - Production') {
       steps {
         echo './deploy production'
+        mail(subject: 'test', body: 'test', to: 'hanxuepeng001@126.com')
       }
     }
   }
